@@ -180,7 +180,7 @@ namespace EtGamepad {
         radio.sendNumber(button)
 
         switch (button) {
-            case Button.Button1: basic.showNumber(button); if (EventGamepad1) EventGamepad1; break;
+            case Button.Button1: if (EventGamepad1) basic.showNumber(button); EventGamepad1; break;
             case Button.Button2: if (EventGamepad2) EventGamepad2; break;
             case Button.Button3: if (EventGamepad3) EventGamepad3; break;
             case Button.Button4: if (EventGamepad4) EventGamepad4; break;
