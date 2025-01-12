@@ -178,6 +178,7 @@ namespace EtGamepad {
         TIME = input.runningTime() + DELAY
         PINPRESSED = pin
         radio.sendNumber(button)
+basic.showNumber(button)
         switch (button) {
             case Button.Button1: if (EventGamepad1) EventGamepad1; break;
             case Button.Button2: if (EventGamepad2) EventGamepad2; break;
