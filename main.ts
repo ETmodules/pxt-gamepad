@@ -1,4 +1,4 @@
-//% color="#00CC00" icon="\uf11b"
+//% color="#EEAA00" icon="\uf11b"
 //% block="Gamepad"
 namespace EtGamepad {
 
