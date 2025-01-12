@@ -127,6 +127,8 @@ namespace EtGamepad {
     //% block="when %button is pressed on gamepad"
     //% block.loc.nl="wanneer op de gamepad %button wordt ingedrukt"
     export function onButtonPressed(button: Button, programmableCode: () => void): void {
+basic.showNumber(button)
+basic.pause(2000)
         switch (button) {
             case Button.Button1: EventGamepad1 = programmableCode; break;
             case Button.Button2: EventGamepad2 = programmableCode; break;
