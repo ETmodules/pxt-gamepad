@@ -128,18 +128,18 @@ namespace EtGamepad {
     //% block.loc.nl="wanneer op de gamepad %button wordt ingedrukt"
     export function onButtonPressed(button: Button, programmableCode: () => void): void {
         switch (button) {
-            case Button.Button1: EventGamepad1 = programmableCode; break;
-            case Button.Button2: EventGamepad2 = programmableCode; break;
-            case Button.Button3: EventGamepad3 = programmableCode; break;
-            case Button.Button4: EventGamepad4 = programmableCode; break;
-            case Button.Button5: EventGamepad5 = programmableCode; break;
-            case Button.Button6: EventGamepad6 = programmableCode; break;
-            case Button.Button7: EventGamepad7 = programmableCode; break;
-            case Button.Button8: EventGamepad8 = programmableCode; break;
-            case Button.Button9: EventGamepad9 = programmableCode; break;
-            case Button.Button10: EventGamepad10 = programmableCode; break;
+            case Button.Button1: EventGamepad1 = programmableCode; basic.showNumber(button); break;
+            case Button.Button2: EventGamepad2 = programmableCode; basic.showNumber(button); ;
+            case Button.Button3: EventGamepad3 = programmableCode; basic.showNumber(button); break;
+            case Button.Button4: EventGamepad4 = programmableCode; basic.showNumber(button); break;
+            case Button.Button5: EventGamepad5 = programmableCode; basic.showNumber(button); break;
+            case Button.Button6: EventGamepad6 = programmableCode; basic.showNumber(button); break;
+            case Button.Button7: EventGamepad7 = programmableCode; basic.showNumber(button); break;
+            case Button.Button8: EventGamepad8 = programmableCode; basic.showNumber(button); break;
+            case Button.Button9: EventGamepad9 = programmableCode; basic.showNumber(button); break;
+            case Button.Button10: EventGamepad10 = programmableCode; basic.showNumber(button); break;
             case Button.Button11: EventGamepad11 = programmableCode; basic.showNumber(button); break;
-            case Button.Button12: EventGamepad12 = programmableCode; break;
+            case Button.Button12: EventGamepad12 = programmableCode; basic.showNumber(button); break;
         }
     }
 
