@@ -5,7 +5,7 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "pxt-gpbasic": "github:ETmodules/pxt-gpbasic#92a1d8baa8e567a131b6250567fa426923eea2b8"
+        "pxt-gpbasic": "github:etmodules/pxt-gpbasic#c5f09f370c8202633d6c95718a5fe09544c0e911"
     },
     "files": [
         "main.blocks",
