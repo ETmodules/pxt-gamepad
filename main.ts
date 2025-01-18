@@ -114,7 +114,7 @@ namespace EtGamepad {
     let EventReleased11: gamepadHandler
     let EventReleased12: gamepadHandler
 
-    function handleEventPressed(button: Gamepad) {
+    export function handleEventPressed(button: Gamepad) {
         switch (button) {
             case Gamepad.Button1: PRESSED1 = true; if (EventPressed1) EventPressed1(); break;
             case Gamepad.Button2: PRESSED2 = true; if (EventPressed2) EventPressed2(); break;
@@ -131,7 +131,7 @@ namespace EtGamepad {
         }
     }
 
-    function handleEventReleased(button: Gamepad) {
+    export function handleEventReleased(button: Gamepad) {
         switch (button) {
             case Gamepad.Button1: PRESSED1 = false; if (EventReleased1) EventReleased1(); break;
             case Gamepad.Button2: PRESSED2 = false; if (EventReleased2) EventReleased2(); break;
@@ -147,16 +147,6 @@ namespace EtGamepad {
             case Gamepad.Button12: PRESSED12 = false; if (EventReleased12) EventReleased12(); break;
         }
     }
-
-    radio.onReceivedNumber(function (receivedNumber: number) {
-        if (receivedNumber > Gamepad.Button12) {
-            receivedNumber -= Gamepad.Button12
-            handleEventReleased(receivedNumber)
-        }
-        else
-            handleEventPressed(receivedNumber)
-        basic.showNumber(receivedNumber)
-    })
 
     //% block="join %group"
     //% block.loc.nl="sluit aan bij %group"
@@ -244,3 +234,13 @@ namespace EtGamepad {
     }
 
 }
+
+radio.onReceivedNumber(function (receivedNumber: number) {
+    if (receivedNumber > EtGamepad.Gamepad.Button12) {
+        receivedNumber -= EtGamepad.Gamepad.Button12
+        EtGamepad.handleEventReleased(receivedNumber)
+    }
+    else
+        EtGamepad.handleEventPressed(receivedNumber)
+    basic.showNumber(receivedNumber)
+})
