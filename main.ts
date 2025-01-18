@@ -2,7 +2,7 @@
 //% block="Gamepad"
 namespace EtGamepad {
 
-    enum Group {
+    export enum Group {
         //% block="group 1"
         //% block.loc.nl="groep 1"
         Group1,
@@ -34,7 +34,7 @@ namespace EtGamepad {
 
     let GROUP = Group.Group1
 
-    enum Gamepad {
+    export enum Gamepad {
         //% block="black-top"
         //% block.loc.nl="zwart-boven"
         Button1, //P13
@@ -71,15 +71,6 @@ namespace EtGamepad {
         //% block="red"
         //% block.loc.nl="rood"
         Button12 //P11
-    }
-
-    enum Action {
-        //% block="pressed"
-        //% block.loc.nl="ingedrukt"
-        Pressed,
-        //% block="released"
-        //% block.loc.nl="losgelaten"
-        Released
     }
 
     let PRESSED1 = false
@@ -168,14 +159,14 @@ namespace EtGamepad {
 
     //% block="join %group"
     //% block.loc.nl="sluit aan bij %group"
-    function setGroup(group: Group) {
+    export function setGroup(group: Group) {
         GROUP = group + 1
         radio.setGroup(GROUP)
     }
 
     //% block="%button is up"
     //% block.loc.nl="%button is losgelaten"
-    function isReleased(button: Gamepad): boolean {
+    export function isReleased(button: Gamepad): boolean {
         switch (button) {
             case Gamepad.Button1: return !PRESSED1;
             case Gamepad.Button2: return !PRESSED2;
@@ -195,7 +186,7 @@ namespace EtGamepad {
 
     //% block="%button is down"
     //% block.loc.nl="%button is ingedrukt"
-    function isPressed(button: Gamepad): boolean {
+    export function isPressed(button: Gamepad): boolean {
         switch (button) {
             case Gamepad.Button1: return PRESSED1;
             case Gamepad.Button2: return PRESSED2;
@@ -215,7 +206,7 @@ namespace EtGamepad {
 
     //% block="when %button is released on gamepad"
     //% block.loc.nl="wanneer op de gamepad %button wordt losgelaten"
-    function onButtonReleased(button: Gamepad, programmableCode: () => void): void {
+    export function onButtonReleased(button: Gamepad, programmableCode: () => void): void {
         switch (button) {
             case Gamepad.Button1: EventReleased1 = programmableCode; break;
             case Gamepad.Button2: EventReleased2 = programmableCode; break;
@@ -234,7 +225,7 @@ namespace EtGamepad {
 
     //% block="when %button is pressed on gamepad"
     //% block.loc.nl="wanneer op de gamepad %button wordt ingedrukt"
-    function onButtonPressed(button: Gamepad, programmableCode: () => void): void {
+    export function onButtonPressed(button: Gamepad, programmableCode: () => void): void {
         switch (button) {
             case Gamepad.Button1: EventPressed1 = programmableCode; break;
             case Gamepad.Button2: EventPressed2 = programmableCode; break;

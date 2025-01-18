@@ -4,8 +4,7 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*",
-        "pxt-gpbasic": "github:etmodules/pxt-gpbasic#c5f09f370c8202633d6c95718a5fe09544c0e911"
+        "microphone": "*"
     },
     "files": [
         "main.blocks",
