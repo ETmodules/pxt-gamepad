@@ -148,7 +148,7 @@ namespace EtGamepad {
         }
     }
 
-    radio.onReceivedNumber(function (action: number) {
+    radio.onReceivedNumber(function (action) {
         if (action > Gamepad.Button12) {
             action -= Gamepad.Button12
 
