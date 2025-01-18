@@ -148,16 +148,13 @@ namespace EtGamepad {
         }
     }
 
-    radio.onReceivedNumber(function (receivedNumber: number) {
-basic.showNumber(receivedNumber)
-/*
-        if (receivedNumber > Gamepad.Button12) {
-            receivedNumber -= Gamepad.Button12
-            handleEventReleased(receivedNumber)
+    radio.onReceivedNumber(function (action: number) {
+        if (action > Gamepad.Button12) {
+            action -= Gamepad.Button12
+            handleEventReleased(action)
         }
         else
-            handleEventPressed(receivedNumber)
-*/
+            handleEventPressed(action)
     })
 
     //% block="join %group"
