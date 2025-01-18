@@ -204,8 +204,8 @@ namespace EtGamepad {
         return false;
     }
 
-    //% block="when %button is released on gamepad"
-    //% block.loc.nl="wanneer op de gamepad %button wordt losgelaten"
+    //% block="when %button is released"
+    //% block.loc.nl="wanneer %button wordt losgelaten"
     export function onButtonReleased(button: Gamepad, programmableCode: () => void): void {
         switch (button) {
             case Gamepad.Button1: EventReleased1 = programmableCode; break;
@@ -223,8 +223,8 @@ namespace EtGamepad {
         }
     }
 
-    //% block="when %button is pressed on gamepad"
-    //% block.loc.nl="wanneer op de gamepad %button wordt ingedrukt"
+    //% block="when %button is pressed"
+    //% block.loc.nl="wanneer op %button gedrukt"
     export function onButtonPressed(button: Gamepad, programmableCode: () => void): void {
         switch (button) {
             case Gamepad.Button1: EventPressed1 = programmableCode; break;
