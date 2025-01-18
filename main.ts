@@ -148,6 +148,18 @@ namespace EtGamepad {
         }
     }
 
+    radio.onReceivedNumber(function (receivedNumber: number) {
+basic.showNumber(receivedNumber)
+/*
+        if (receivedNumber > Gamepad.Button12) {
+            receivedNumber -= Gamepad.Button12
+            handleEventReleased(receivedNumber)
+        }
+        else
+            handleEventPressed(receivedNumber)
+*/
+    })
+
     //% block="join %group"
     //% block.loc.nl="sluit aan bij %group"
     export function setGroup(group: Group) {
@@ -234,13 +246,3 @@ namespace EtGamepad {
     }
 
 }
-
-radio.onReceivedNumber(function (receivedNumber: number) {
-    if (receivedNumber > EtGamepad.Gamepad.Button12) {
-        receivedNumber -= EtGamepad.Gamepad.Button12
-        EtGamepad.handleEventReleased(receivedNumber)
-    }
-    else
-        EtGamepad.handleEventPressed(receivedNumber)
-    basic.showNumber(receivedNumber)
-})
