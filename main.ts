@@ -148,13 +148,18 @@ namespace EtGamepad {
         }
     }
 
-    radio.onReceivedNumber(function (action: number) {
-        if (action > Gamepad.Button12) {
-            action -= Gamepad.Button12
-            handleEventReleased(action)
+    radio.onReceivedNumber(function (button: number) {
+        if (button > Gamepad.Button12) {
+            button -= Gamepad.Button12
+if (button==Gamepad.Button1)
+basic.showIcon(IconNames.No)
+            handleEventReleased(button)
         }
-        else
-            handleEventPressed(action)
+        else {
+if (button == Gamepad.Button1)
+basic.showIcon(IconNames.Yes)
+            handleEventPressed(button)
+        }
     })
 
     //% block="join %group"
