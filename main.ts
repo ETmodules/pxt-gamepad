@@ -73,6 +73,8 @@ namespace EtGamepad {
         Button12 //P11
     }
 
+    let BUTTONMAX = 12
+
     let PRESSED1 = false
     let PRESSED2 = false
     let PRESSED3 = false
@@ -147,17 +149,14 @@ namespace EtGamepad {
             case Gamepad.Button12: PRESSED12 = false; if (EventReleased12) EventReleased12(); break;
         }
     }
-let cnt=5
+
     radio.onReceivedNumber(function (button: number) {
-        if (button > Gamepad.Button12) {
-            button -= Gamepad.Button12
-basic.showNumber(--cnt)
+        if (button >= BUTTONMAX) {
+            button -= BUTTONMAX
             handleEventReleased(button)
         }
-        else {
-basic.showNumber(++cnt)
-            handleEventPressed(button)
-        }
+        else
+           handleEventPressed(button)
     })
 
     //% block="join %group"
