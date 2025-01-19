@@ -73,7 +73,7 @@ namespace EtGamepad {
         Button12 //P11
     }
 
-    let BUTTONMAX = 12
+    export let BUTTONMAX = 12
 
     let PRESSED1 = false
     let PRESSED2 = false
