@@ -147,16 +147,14 @@ namespace EtGamepad {
             case Gamepad.Button12: PRESSED12 = false; if (EventReleased12) EventReleased12(); break;
         }
     }
-let cnt = 5
+let cnt=5
     radio.onReceivedNumber(function (button: number) {
         if (button > Gamepad.Button12) {
             button -= Gamepad.Button12
-if (button==Gamepad.Button1)
 basic.showNumber(--cnt)
             handleEventReleased(button)
         }
         else {
-if (button == Gamepad.Button1)
 basic.showNumber(++cnt)
             handleEventPressed(button)
         }
